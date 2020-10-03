@@ -35,15 +35,15 @@ There is 1 main notebook, 1 Python file containing utility functions, and 1 data
 ## Project Screenshots
 Users can interactively classify a message
 
-!['Enter Message'](readme_imgs/001_input.jpg)
+!['Enter Message'](readme_imgs/001_input.JPG)
 
 The app then displays the classification results.
 
-!['Example Output'](readme_imgs/001a_input.jpg)
+!['Example Output'](readme_imgs/001a_input.JPG)
 
 During startup of the web app, it displays summary stats of the training data set
-!['Message Types'](readme_imgs/002_visual.jpg)
-!['Category Counts'](readme_imgs/003_visual.jpg)
+!['Message Types'](readme_imgs/002_visual.JPG)
+!['Category Counts'](readme_imgs/003_visual.JPG)
 
 
 ## Acknowledgements
