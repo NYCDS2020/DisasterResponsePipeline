@@ -1,5 +1,5 @@
 # Disaster Response Pipeline
-This project was completed as part of the Udacity Data Science Nanodegree requirement [Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025).
+This project was completed as part of project requirements for the Udacity [Data Scientist Nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025) requirement as outlined.
 
 ## Required libraries
 - nltk 
