@@ -28,9 +28,7 @@ The end result is a web app that allows users to a) observe some visual insights
 - data - CSV source files, SQL database and Python code required to load, clean, merge and write data
 - models - Python code required to train classifier. Note: the pickled model is NOT included
 - notebooks - ETL and ML Jupyter notebooks
-readme_imgs - Screenshots of the running application 
-
-There is 1 main notebook, 1 Python file containing utility functions, and 1 data file. Markdown cells are used extensively to facilitate walk throughs of the approach.
+- readme_imgs - Screenshots of the running application 
 
 ## Project Screenshots
 Users can interactively classify a message
