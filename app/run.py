@@ -8,6 +8,7 @@ from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar
+from plotly.graph_objs import Heatmap
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
@@ -43,6 +44,14 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    df_categories = df.iloc[:,5:]
+    categories_names = df_categories.columns
+    categories_count = df_categories.sum()
+    related_counts = df.related.value_counts().tolist()
+  
+    
+    #col_names = [col.replace('_', ' ').title() for col in data.columns]
+    
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
@@ -61,9 +70,54 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
-                }
+                },
+                'height': 650,
+                'margin': dict(
+                    b = 200,
+                    pad = 4
+                    )
             }
+        },
+        {
+            'data': [
+                Bar(
+                    x=categories_names,
+                    y=categories_count
+                )
+            ],
+            'layout': {
+                'title': 'Message Category Counts',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Message Type"
+                },
+                'height': 650,
+                'margin': dict(
+                    b = 200,
+                    pad = 4
+                    )
+            }
+        },
+        {
+          'data': [
+                Bar(
+                    x=['Related', 'Not Related'],
+                    y=related_counts
+                )
+            ],
+            'layout': {
+                'title': 'Message count - Related / Not Related to Disaster',
+                 'height': 650,
+                'margin': dict(
+                  b = 200,
+                  pad = 4
+                  )      
+            }
+            
         }
+            
     ]
     
     # encode plotly graphs in JSON
